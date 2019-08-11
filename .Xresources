@@ -39,8 +39,8 @@
 
 
 ! Font
-URxvt*font: xft:DejaVu Sans Mono:style=Book:size=13
-URxvt*boldFont: xft:DejaVu Sans Mono:style=Book:size=13
+URxvt*font: xft:DejaVu Sans Mono:style=Book:size=13,xft:Inconsolata for Powerline:style=Medium:size=13
+URxvt*boldFont: xft:DejaVu Sans Mono:style=Book:size=13,xft:Inconsolata for Powerline:style=Medium:size=13
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.cursorBlink: true
@@ -53,3 +53,6 @@ URxvt.iso14755: false
 ! Extensions
 URxvt.perl-ext-common: ...,keyboard-select
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+
+URxvt.lineSpace: 2
