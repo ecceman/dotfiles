@@ -1,21 +1,3 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
-
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #222
@@ -58,7 +40,7 @@ font-3 = FontAwesome:style=Regular:size=12;0
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = cpu temperature filesystem xbacklight screen pulseaudio memory wlan eth battery date powermenu
+modules-right = cpu temperature filesystem screen pulseaudio memory wlan eth battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -263,7 +245,7 @@ interface = enp0s25
 interval = 0.5
 
 format-connected-underline = #55aa55
-format-connected-prefix = "ETH "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %ifname% %linkspeed% %local_ip%
 
