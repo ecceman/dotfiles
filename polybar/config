@@ -265,7 +265,7 @@ interval = 0.5
 format-connected-underline = #55aa55
 format-connected-prefix = "ETH "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip% | %link-speed%
+label-connected = %ifname% %linkspeed% %local_ip%
 
 ;format-disconnected =
 format-disconnected-prefix = " "

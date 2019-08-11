@@ -54,5 +54,4 @@ URxvt.iso14755: false
 URxvt.perl-ext-common: ...,keyboard-select
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
-
 URxvt.lineSpace: 2
