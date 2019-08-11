@@ -184,12 +184,32 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
-gaps inner 15
 
-new_window pixel 2
+# Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #285577 #ffffff #2e9ef4   #00000o
+client.focused_inactive #000000 #5f676a #ffffff #484e50   #000000
+client.unfocused        #000000 #222222 #888888 #292d2e   #000000
+client.urgent           #000000 #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
+
+
+gaps inner 20
+gaps outer 0
+
+new_window pixel 8
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ./pictures/2182.jpg
 exec_always --no-startup-id compton -f
 #exec_always --no-startup-id nextcloud
 exec_always --no-startup-id xrdb ~/.Xresources
+
+
+# Auto position applications
+for_window [title = "Chromium"] move workspace 2
+for_window [title = "Atom"] move workspace 3
+for_window [title = "Spotify"] move workspace 4
+for_window [title = "Volume Control"] move workspace 4
+for_window [title = "Volume Control"] resize set width 700 px
