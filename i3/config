@@ -198,7 +198,7 @@ client.background       #ffffff
 gaps inner 20
 gaps outer 0
 
-new_window pixel 8
+new_window pixel 0
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ./pictures/2182.jpg
@@ -210,6 +210,11 @@ exec_always --no-startup-id xrdb ~/.Xresources
 # Auto position applications
 for_window [title = "Chromium"] move workspace 2
 for_window [title = "Atom"] move workspace 3
-for_window [title = "Spotify"] move workspace 4
-for_window [title = "Volume Control"] move workspace 4
-for_window [title = "Volume Control"] resize set width 700 px
+for_window [class = "Spotify"] move workspace 4
+#for_window [title = "Volume Control"] move workspace 4
+for_window [class = "Pavucontrol"] move workspace 4
+#for_window [class = "Pavucontrol"] resize shrink width 600px;
+for_window [class = "Pavucontrol"] resize set width 600px;
+for_window [title = "Ásbrú Connection Manager"] 5
+assign [class = "Firefox-esr"] 5
+assign [class = "teams-for-linux"] 6
