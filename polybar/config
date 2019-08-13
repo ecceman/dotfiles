@@ -40,7 +40,7 @@ font-3 = FontAwesome:style=Regular:size=12;0
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = cpu temperature filesystem screen pulseaudio memory wlan eth battery date powermenu
+modules-right = cpu temperature filesystem screen pulseaudio memory wlan wlan-strength eth battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -70,6 +70,14 @@ exec = brightnessctl g
 label =  %output% / 852
 interval = 0.1
 format-underline = #e80592
+
+[module/wlan-strength]
+type = custom/script
+exec = cat /proc/net/wireless | grep wlp4s0 | cut -d " " -f 7 | head -c 3
+label = %output% dBm
+interval = 0.1
+format-underline = #9f78e1
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -226,7 +234,7 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 
 format-connected-underline = #9f78e1
-label-connected = %essid% | %local_ip% | -%signal%dB
+label-connected = %essid% | %local_ip%
 
 ;format-disconnected = 
 format-disconnected =  <label-disconnected>
