@@ -58,10 +58,10 @@ bindsym $mod+space exec  rofi -theme DarkBlue -modi run -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -150,6 +150,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# i3lock
+bindsym $mod+l exec --no-startup-id "i3lock -i ~/pictures/debian.png"
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -205,7 +208,7 @@ exec_always --no-startup-id feh --bg-scale ./pictures/2182.jpg
 exec_always --no-startup-id compton -f
 #exec_always --no-startup-id nextcloud
 exec_always --no-startup-id xrdb ~/.Xresources
-
+exec --no-startup-id xautolock -time 10 -locker 'i3lock -c 000000'
 
 # Auto position applications
 for_window [title = "Chromium"] move workspace 2
