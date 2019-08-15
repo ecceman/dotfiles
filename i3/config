@@ -31,8 +31,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/volumeup.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/volumedown.sh
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Screen Brightness
@@ -200,15 +202,23 @@ client.background       #ffffff
 
 gaps inner 20
 gaps outer 0
-
 new_window pixel 0
+
+# Application start bindings
+bindsym $mod+Control+f exec --no-startup-id "firefox-esr https://teams.microsoft.com"
+bindsym $mod+Control+s exec --no-startup-id "spotify"
+bindsym $mod+Control+a exec --no-startup-id "atom"
+bindsym $mod+Control+c exec --no-startup-id "chrom"
+
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale ./pictures/2182.jpg
 exec_always --no-startup-id compton -f
-#exec_always --no-startup-id nextcloud
+exec --no-startup-id nextcloud
 exec_always --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id xautolock -time 10 -locker 'i3lock -c 000000'
+exec_always --no-startup-id xautolock -time 15 -locker 'i3lock -i ~/pictures/debian.png'
+
+
 
 # Auto position applications
 for_window [title = "Chromium"] move workspace 2
@@ -219,5 +229,4 @@ for_window [class = "Pavucontrol"] move workspace 4
 #for_window [class = "Pavucontrol"] resize shrink width 600px;
 for_window [class = "Pavucontrol"] resize set width 600px;
 for_window [title = "Ásbrú Connection Manager"] 5
-assign [class = "Firefox-esr"] 5
-assign [class = "teams-for-linux"] 6
+assign [class = "Firefox-esr"] 6
