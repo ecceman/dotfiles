@@ -38,9 +38,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:style=Regular:size=12;0
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = 
-modules-right = cpu temperature filesystem screen pulseaudio memory wlan wlan-strength eth battery date powermenu
+modules-right = cpu temperature filesystem screen pulseaudio memory wlan wlan-ap eth battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -71,13 +71,20 @@ label =  %output% / 852
 interval = 0.1
 format-underline = #e80592
 
-[module/wlan-strength]
-type = custom/script
-exec = cat /proc/net/wireless | grep wlp4s0 | cut -d " " -f 7 | head -c 3
-label = %output% dBm
-interval = 0.1
-format-underline = #9f78e1
+#[module/wlan-strength]
+#type = custom/script
+#exec = cat /proc/net/wireless | grep wlp4s0 | cut -d " " -f 7 | head -c 3
+#exec-if = nmcli -f BSSID,ACTIVE dev wifi list | awk '$2 ~ /yes/ {print $1}'
+#label = %output% dBm
+#interval = 0.1
+#format-underline = #9f78e1
 
+[module/wlan-ap]
+type = custom/script
+exec = ~/.config/polybar/wlan-info.sh
+label = %output%
+interval = 2
+format-underline = #9f78e1
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -179,8 +186,10 @@ ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
-ws-icon-5 = 6;
+ws-icon-5 = 6;
 ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
 ws-icon-default = ♟
 
 
