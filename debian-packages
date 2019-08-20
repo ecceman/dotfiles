@@ -24,3 +24,9 @@ sudo vmware-modconfig –console –install-all
 
 # i3lock
 sudo apt install i3lock xautolock
+
+# minicom
+sudo apt install minicom
+
+# network-related
+sudo apt install fping
