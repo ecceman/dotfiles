@@ -29,4 +29,4 @@ sudo apt install i3lock xautolock
 sudo apt install minicom
 
 # network-related
-sudo apt install fping
+sudo apt install fping net-tools

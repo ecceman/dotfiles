@@ -81,7 +81,8 @@ format-underline = #e80592
 
 [module/wlan-ap]
 type = custom/script
-exec = ~/.config/polybar/wlan-info.sh
+# exec = ~/.config/polybar/wlan-info.sh
+exec = python3 ~/.config/polybar/wlan-info.py
 label = %output%
 interval = 2
 format-underline = #9f78e1
@@ -243,7 +244,7 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 
 format-connected-underline = #9f78e1
-label-connected = %essid% | %local_ip%
+label-connected = %essid% %local_ip%  %upspeed%  %downspeed%
 
 ;format-disconnected = 
 format-disconnected =  <label-disconnected>
