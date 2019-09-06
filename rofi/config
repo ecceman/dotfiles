@@ -1,0 +1,24 @@
+rofi.font:		Inconsolata for Powerline 18
+rofi.modi:		drun
+rofi.run:		drun
+rofi.bw:		0
+rofi.hide-scrollbar:	true
+rofi.padding:		20
+rofi.line-padding:	20
+rofi.line-margin:	2
+rofi.lines:		8
+rofi.markup-rows:	true
+rofi.eh:		1
+rofi.columns:		1
+rofi.separator-style:	solid
+rofi.sidebar-mode:	false
+
+! Colors
+!			BG		BORDER	  SEPARATOR
+rofi.color-window:	argb:DD222222,	#7c8389,  #444444
+!
+! State			BG		FG	  BGALT		  HLBG		  HLFG
+rofi.color-normal:	argb:00222222,	#f3f4f5,  argb:00222222,  argb:22ffffff,  #95cd75
+rofi.color-urgent:	argb:dd1d1f21,	#f3f4f5,  argb:031d1f21,  argb:22ffffff,  #95cd75
+rofi.color-active:	argb:dd1d1f21,	#f3f4f5,  argb:031d1f21,  argb:22ffffff,  #95cd75
+
