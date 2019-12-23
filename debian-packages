@@ -11,6 +11,10 @@ cd build
 make -j8
 sudo make install
 
+# polybar
+sudo apt install cmake build-essential libxcb-composite0-dev libcairo2-dev xcb-proto
+
+
 # Asbru-cm connection manager
 curl -s https://packagecloud.io/install/repositories/asbru-cm/asbru-cm/script.deb.sh | sudo bash
 sudo apt install asbru-cm
