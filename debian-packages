@@ -12,7 +12,7 @@ make -j8
 sudo make install
 
 # polybar
-sudo apt install cmake build-essential libxcb-composite0-dev libcairo2-dev xcb-proto
+sudo apt install cmake build-essential libxcb-composite0-dev libcairo2-dev xcb-proto libpulse-dev
 
 
 # Asbru-cm connection manager
