@@ -12,7 +12,7 @@ make -j8
 sudo make install
 
 # polybar
-sudo apt install cmake build-essential libxcb-composite0-dev libcairo2-dev xcb-proto libpulse-dev libnl-genl-3-dev libx11-xcb-dev libxcb-ewmh-dev python-xcbgen
+sudo apt install cmake build-essential libxcb-composite0-dev libcairo2-dev xcb-proto libpulse-dev libnl-genl-3-dev libx11-xcb-dev libxcb-ewmh-dev python-xcbgen brightnessctl
 git clone https://github.com/polybar/polybar.git
 cd polybar
 git submodule update --init --recursive
