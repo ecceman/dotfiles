@@ -20,6 +20,8 @@ mkdir build
 cd build
 cmake ..
 
+# GNOME and GTK applications
+sudo apt install nautilus lxappearance 
 
 
 # Asbru-cm connection manager
