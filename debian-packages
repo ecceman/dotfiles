@@ -21,7 +21,12 @@ cd build
 cmake ..
 
 # GNOME and GTK applications
-sudo apt install nautilus lxappearance 
+sudo apt install nautilus lxappearance ninja-build meson
+
+# GTK themes and icons
+git clone https://github.com/snwh/paper-icon-theme.git
+meson "build" --prefix=/usr
+sudo ninja "build" -C install
 
 
 # Asbru-cm connection manager
