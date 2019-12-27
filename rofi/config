@@ -1,6 +1,6 @@
 rofi.font:		Inconsolata for Powerline 18
-rofi.modi:		drun
-rofi.run:		drun
+! rofi.modi:		drun
+! rofi.run:		drun
 rofi.bw:		0
 rofi.hide-scrollbar:	true
 rofi.padding:		20
@@ -11,7 +11,7 @@ rofi.markup-rows:	true
 rofi.eh:		1
 rofi.columns:		1
 rofi.separator-style:	solid
-rofi.sidebar-mode:	false
+rofi.sidebar-mode:	true
 
 ! Colors
 !			BG		BORDER	  SEPARATOR
