@@ -211,6 +211,9 @@ gaps inner 20
 gaps outer 0
 new_window pixel 0
 
+# Flameshot screen capture
+bindsym $mod+Print exec --no-startup-id "flameshot gui -p ~/Pictures"
+
 # Application start bindings
 bindsym $mod+Control+f exec --no-startup-id "firefox-esr https://teams.microsoft.com"
 bindsym $mod+Control+s exec --no-startup-id "spotify"
