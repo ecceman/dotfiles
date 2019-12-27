@@ -28,6 +28,9 @@ git clone https://github.com/snwh/paper-icon-theme.git
 meson "build" --prefix=/usr
 sudo ninja "build" -C install
 
+# Flameshot
+sudo apt install flameshot
+
 
 # Asbru-cm connection manager
 curl -s https://packagecloud.io/install/repositories/asbru-cm/asbru-cm/script.deb.sh | sudo bash
