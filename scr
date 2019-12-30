@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Switch xrandr settings
+case  $1 in 
+	"work")
+	  xrandr --output eDP1 --mode 1920x1080 --primary --output HDMI2 --mode 2560x1440 --above eDP1
+	  ;;
+	"test")
+	  echo "test ok"
+	  ;;
+	*)
+	  echo "Argument list: work, home"
+	  ;;
+esac
+
+
