@@ -38,6 +38,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/volumedown.sh
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Screen Brightness
+# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 
@@ -51,8 +52,9 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+# start a program launcher
+# bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+space exec "rofi -config ~/.config/rofi/config -modi run,ssh -show run"
 
 # change focus
@@ -149,7 +151,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # i3lock
-bindsym $mod+l exec --no-startup-id "i3lock -i ~/pictures/debian.png"
+bindsym $mod+l exec --no-startup-id "i3lock -i ~/Pictures/debian.png"
 
 
 # resize window (you can also use the mouse for that)
@@ -211,8 +213,11 @@ gaps inner 20
 gaps outer 0
 new_window pixel 0
 
-# Flameshot screen capture
+# Flameshot binding
 bindsym $mod+Print exec --no-startup-id "flameshot gui -p ~/Pictures"
+
+# Gnome Settings binding
+bindsym $mod+Shift+S exec --no-startup-id "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 
 # Application start bindings
 bindsym $mod+Control+f exec --no-startup-id "firefox-esr https://teams.microsoft.com"
@@ -221,22 +226,22 @@ bindsym $mod+Control+a exec --no-startup-id "atom"
 bindsym $mod+Control+c exec --no-startup-id "chrom"
 
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale ./pictures/2182.jpg
+exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-scale ./Pictures/debian.jpg
 exec_always --no-startup-id compton -f
 exec --no-startup-id nextcloud
 exec_always --no-startup-id xrdb ~/.Xresources
-exec_always --no-startup-id xautolock -time 15 -locker 'i3lock -i ~/pictures/debian.png'
+exec_always --no-startup-id xautolock -time 15 -locker 'i3lock -i ~/Pictures/debian.png'
 
 
 
 # Auto position applications
-for_window [title = "Chromium"] move workspace 2
-for_window [title = "Atom"] move workspace 3
-for_window [class = "Spotify"] move workspace 4
-#for_window [title = "Volume Control"] move workspace 4
-for_window [class = "Pavucontrol"] move workspace 4
-#for_window [class = "Pavucontrol"] resize shrink width 600px;
-for_window [class = "Pavucontrol"] resize set width 600px;
-for_window [title = "Ásbrú Connection Manager"] 5
-assign [class = "Firefox-esr"] 6
+# for_window [title = "Chromium"] move workspace 2
+# for_window [title = "Atom"] move workspace 3
+# for_window [class = "Spotify"] move workspace 4
+# for_window [title = "Volume Control"] move workspace 4
+# for_window [class = "Pavucontrol"] move workspace 4
+# for_window [class = "Pavucontrol"] resize shrink width 600px;
+# for_window [class = "Pavucontrol"] resize set width 600px;
+# for_window [title = "Ásbrú Connection Manager"] 5
+# assign [class = "Firefox-esr"] 6
