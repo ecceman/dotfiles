@@ -11,10 +11,11 @@ ap = cmd_ap.stdout.read().decode('utf-8').strip('\n').lower()
 
 cmd_rssi = subprocess.Popen(['cat /proc/net/wireless | grep ' + wnic + ' | cut -d " " -f 7 | head -c 3'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
 rssi = cmd_rssi.stdout.read().decode('utf-8')
+rssi = rssi.strip('\n')
 
-cmd_ch = subprocess.Popen(['sudo iwlist ' + wnic + ' frequency |  grep Current | awk \'{print substr($5,0,2)}\''], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+cmd_ch = subprocess.Popen(['sudo iwlist ' + wnic + ' frequency |  grep Current | awk \'{print $5}\' | sed s/[^0-9]*//g'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
 ch = cmd_ch.stdout.read().decode('utf-8')
-ch = re.sub("[^0-9]", "", ch)
+ch = ch.strip('\n')
 
 cmd_ht = subprocess.Popen(['sudo iw dev | grep -i ' + wnic + ' -A 10 | grep -w "width: [0-9]*" | awk \'{print $6}\''], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
 ht = cmd_ht.stdout.read().decode('utf-8')
@@ -36,3 +37,4 @@ except IOError:
     pass
     
 print(rssi + " dBm, Ch " + ch + ", " + ht + " Mhz @ " + ap)
+
