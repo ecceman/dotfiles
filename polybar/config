@@ -31,6 +31,13 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[bar/DP2]
+inherit = bar/master
+monitor = DP2
+modules-left = i3
+modules-center =
+modules-right = cpu temperature filesystem screen pulseaudio memory wlan-ap eth battery date powermenu
+
 
 
 [bar/HDMI2]
@@ -45,7 +52,7 @@ inherit = bar/master
 monitor = eDP1
 modules-left = i3
 modules-center = 
-modules-right = cpu temperature filesystem screen pulseaudio memory wlan wlan-ap eth battery date powermenu
+modules-right = cpu temperature filesystem screen pulseaudio memory wlan-ap eth battery date powermenu
 
 
 [module/screen]
@@ -61,7 +68,8 @@ exec = python3 ~/.config/polybar/wlan-info.py
 label = %output%
 interval = 2
 format-underline = #9f78e1
-
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 
 [module/filesystem]
 type = internal/fs

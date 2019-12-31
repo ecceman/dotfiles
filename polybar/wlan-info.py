@@ -6,6 +6,9 @@ from pathlib import Path
 
 wnic = "wlp61s0"
 
+cmd_ssid = subprocess.Popen(['nmcli | grep "connected to" | awk \'{print $4}\''], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+ssid = cmd_ssid.stdout.read().decode('utf-8').strip('\n')
+
 cmd_ap = subprocess.Popen(['nmcli -f BSSID,ACTIVE dev wifi list | awk \'$2 ~ /yes/ {print $1}\''], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
 ap = cmd_ap.stdout.read().decode('utf-8').strip('\n').lower()
 
@@ -36,5 +39,5 @@ try:
 except IOError:
     pass
     
-print(rssi + " dBm, Ch " + ch + ", " + ht + " Mhz @ " + ap)
+print(ssid + ", " + rssi + " dBm, Ch " + ch + ", HT" + ht + " @ " + ap)
 
