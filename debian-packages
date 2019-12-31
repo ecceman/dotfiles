@@ -20,8 +20,8 @@ mkdir build
 cd build
 cmake ..
 
-# GNOME and GTK applications
-sudo apt install nautilus lxappearance ninja-build meson
+# GNOME and GTK applications, GUI-related
+sudo apt install nautilus lxappearance ninja-build meson autorandr fonts-powerline
 
 # GTK themes and icons
 git clone https://github.com/snwh/paper-icon-theme.git
