@@ -2,15 +2,28 @@
 
 # Switch xrandr settings
 case  $1 in 
+	"home")
+	  # xrandr --output eDP1 --mode 1920x1080 --primary --output DP2 --mode 3440x1440 --above eDP1
+	  xrandr --output DP2 --above eDP1 --auto
+	  ;;
 	"work")
 	  xrandr --output eDP1 --mode 1920x1080 --primary --output HDMI2 --mode 2560x1440 --above eDP1
+	  ;;
+	"hdmi")
+	  xrandr --output HDMI2 --above eDP1 --auto
+	  ;;
+	"laptop")
+	  xrandr --auto
 	  ;;
 	"test")
 	  echo "test ok"
 	  ;;
 	*)
-	  echo "Argument list: work, home"
+	  xrandr --auto
+	  echo "Argument list: work, home, laptop. No argument given, using --auto"
 	  ;;
 esac
 
+~/.config/polybar/launch.sh
+feh --bg-scale ./Pictures/debian.jpg
 
