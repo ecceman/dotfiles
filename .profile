@@ -29,3 +29,7 @@ fi
 
 # Python hack for external screen automation
 nohup python3 ~/.config/alexrandr.py &
+
+# QT font scale fix
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export "QT_SCREEN_SCALE_FACTORS=1;1"
